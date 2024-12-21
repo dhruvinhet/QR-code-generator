@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    
+    --primary: 263.4 70% 50.4%;
+    --primary-foreground: 210 40% 98%;
+    
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    
+    --accent: 142 71% 45%;
+    --accent-foreground: 0 0% 98%;
+    
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 142 71% 45%;
+    
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-gradient-to-br from-gray-900 to-gray-800 text-foreground min-h-screen;
+  }
+}
+
+/* Subtle glow effects */
+.soft-glow {
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1),
+              0 0 20px rgba(255, 255, 255, 0.05);
+}
+
+.soft-glow-text {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.glass-card {
+  @apply bg-gray-900/50 backdrop-blur-lg border border-gray-700/50;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+}
+
+/* Gentle hover effects */
+.hover-glow {
+  transition: all 0.3s ease;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.2),
+              0 0 30px rgba(168, 85, 247, 0.1);
+}
+
+/* Button styles with subtle glow */
+.glow-button {
+  @apply relative overflow-hidden transition-all duration-300;
+  background: linear-gradient(45deg, #2a2a2a, #3a3a3a);
+  box-shadow: 0 0 10px rgba(168, 85, 247, 0.15);
+}
+
+.glow-button:hover {
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.25),
+              0 0 30px rgba(168, 85, 247, 0.15);
+}
+
+/* Animations */
+@keyframes gentle-pulse {
+  0% {
+    box-shadow: 0 0 10px rgba(168, 85, 247, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.25);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(168, 85, 247, 0.15);
+  }
+}
+
+.pulse-glow {
+  animation: gentle-pulse 3s infinite;
+}
