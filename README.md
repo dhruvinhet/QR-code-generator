@@ -1,4 +1,4 @@
-# Welcome to our QR code generator project
+# Welcome to our QR Code Generator project
 
 
 Follow these steps:
